@@ -21,7 +21,11 @@
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
     "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
     "container-start": "docker-compose up -d",
-    "container-stop": "docker-compose down"
+    "container-stop": "docker-compose down",
+    "compile-project": "npm run build",
+    "migrations:run": "npx typeorm migration:run -d dist/typeorm-cli.config",
+    "migrations:revert": "npx typeorm migration:revert -d dist/typeorm-cli.config",
+    "migrations:generate": "npx typeorm migration:generate src/migrations/SchemaSync -d dist/typeorm-cli.config"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
